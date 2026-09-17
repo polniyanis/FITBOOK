@@ -114,10 +114,11 @@
     const validEmail = 'member1@gmail.com';
     const validPassword = 'member';
 
-    if (emailInput === validEmail && passwordInput === validPassword) {
-      alert('Login successful!');
-      // Redirect or perform login action here
-       window.location.href = 'dashboard.html';
+  if (emailInput === validEmail && passwordInput === validPassword) {
+      window.location.href = 'dashboard.html';
+    } else {
+      alert('Invalid email or password.');
+    }
     } else {
       alert('Invalid email or password.');
     }
