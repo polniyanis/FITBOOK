@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log In · GTG Fitness</title>
+<meta name="description" content="Log in to your GTG Fitness account to access the system." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">GTG FITNESS</a>
+  </header>
+
+  <div class="auth-layout">
+
+    <main class="auth-panel">
+      <div class="auth-form-wrap">
+
+        <h1 class="auth-title">LOG IN TO <span>GTG FITNESS</span></h1>
+        <p class="auth-subtitle">Access the system by logging in here.</p>
+
+        <form class="auth-form" novalidate>
+
+          <div class="field">
+            <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m2 6 10 7 10-7"></path>
+            </svg>
+            <label for="email" class="visually-hidden">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required />
+          </div>
+
+          <div class="field field--toggle">
+            <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            <label for="password" class="visually-hidden">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required />
+            <button type="button" class="field__toggle-btn" aria-label="Show password" data-toggle-password="password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <p class="form-links"><a href="#forgot-password">Forgot your password?</a></p>
+
+          <div class="btn-row">
+            <a href="#back" class="btn btn-outline">Back</a>
+            <button type="submit" class="btn btn-solid">Log In</button>
+          </div>
+
+        </form>
+
+        <p class="form-footnote">Don't have an account yet? <a href="signup.html">Sign Up</a></p>
+
+      </div>
+    </main>
+
+    <aside class="auth-visual" aria-label="GTG Fitness gym">
+      <img
+        src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1400&q=80"
+        alt="A woman in workout gear carrying a gym bag inside a modern fitness studio" />
+
+      <ul class="visual-contact">
+        <li>GTG FITNESS</li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+          gtgfitness25@gmail.com
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
+          09175462414
+        </li>
+      </ul>
+
+      <span class="visual-eye" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      </span>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = document.getElementById(btn.getAttribute('data-toggle-password'));
+      var showing = input.type === 'text';
+      input.type = showing ? 'password' : 'text';
+      btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+    });
+  });
+</script>
+
+</body>
+</html>
