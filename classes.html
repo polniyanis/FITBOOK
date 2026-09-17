@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Classes · GTG Fitness</title>
+<meta name="description" content="Book a class at GTG Fitness." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <header class="app-topbar">
+    <a href="dashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <button type="button" class="app-topbar__settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li class="is-active"><a href="classes.html" aria-current="page">Classes</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+        <span class="visually-hidden">Log out</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">Book your Class now!</h1>
+
+    <div class="classes-grid">
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=500&q=80" alt="Person training with weights in a gym" />
+        <h2 class="class-card__title">Gym use</h2>
+        <p class="class-card__desc">Push limits with intense weight training.</p>
+        <a class="btn btn-navy" href="#book-gym">Book Session</a>
+        <span class="classes-arrow" aria-hidden="true">▶</span>
+      </article>
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=500&q=80" alt="Two boxers sparring in a ring" />
+        <h2 class="class-card__title">Boxing</h2>
+        <p class="class-card__desc">Build strength with powerful boxing drills.</p>
+        <a class="btn btn-navy" href="#book-boxing">Book Session</a>
+      </article>
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=500&q=80" alt="Muay Thai fighters training" />
+        <h2 class="class-card__title">Muay Thai</h2>
+        <p class="class-card__desc">Burn calories with intense training.</p>
+        <a class="btn btn-navy" href="#book-muaythai">Book Session</a>
+      </article>
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=500&q=80" alt="Taekwondo athletes sparring" />
+        <h2 class="class-card__title">Taekwondo</h2>
+        <p class="class-card__desc">Learn kicks, blocks, and techniques.</p>
+        <a class="btn btn-navy" href="#book-taekwondo">Book Session</a>
+      </article>
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=500&q=80" alt="Group Zumba dance class" />
+        <h2 class="class-card__title">Zumba</h2>
+        <p class="class-card__desc">Dance, move, and burn calories.</p>
+        <a class="btn btn-navy" href="#book-zumba">Book Session</a>
+      </article>
+
+      <article class="class-card">
+        <img class="class-card__img" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80" alt="Person in a yoga stretch pose" />
+        <h2 class="class-card__title">Yoga</h2>
+        <p class="class-card__desc">Strengthen and stretch your body.</p>
+        <a class="btn btn-navy" href="#book-yoga">Book Session</a>
+      </article>
+
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>

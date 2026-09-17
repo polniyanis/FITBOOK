@@ -28,7 +28,7 @@
         <h1 class="auth-title">LOG IN TO <span>GTG FITNESS</span></h1>
         <p class="auth-subtitle">Access the system by logging in here.</p>
 
-        <form class="auth-form" novalidate>
+        <form class="auth-form" id="loginForm" novalidate>
 
           <div class="field">
             <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -94,6 +94,7 @@
 </div>
 
 <script>
+  // Password toggle function
   document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var input = document.getElementById(btn.getAttribute('data-toggle-password'));
@@ -101,6 +102,25 @@
       input.type = showing ? 'password' : 'text';
       btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
     });
+  });
+
+  // Hardcoded login validation logic
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const emailInput = document.getElementById('email').value.trim();
+    const passwordInput = document.getElementById('password').value;
+
+    const validEmail = 'member1@gmail.com';
+    const validPassword = 'member';
+
+    if (emailInput === validEmail && passwordInput === validPassword) {
+      alert('Login successful!');
+      // Redirect or perform login action here
+       window.location.href = 'dashboard.html';
+    } else {
+      alert('Invalid email or password.');
+    }
   });
 </script>
 

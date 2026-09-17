@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trainers · GTG Fitness</title>
+<meta name="description" content="Meet the trainers at GTG Fitness." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <header class="app-topbar">
+    <a href="dashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <button type="button" class="app-topbar__settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li class="is-active"><a href="trainers.html" aria-current="page">Trainers</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+        <span class="visually-hidden">Log out</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <div class="trainers-header">
+      <h1 class="page-title">Meet our Trainers!</h1>
+      <label for="category-filter" class="visually-hidden">Filter by category</label>
+      <select id="category-filter" class="select-native">
+        <option>All Categories</option>
+        <option>Yoga</option>
+        <option>Zumba</option>
+        <option>Taekwondo</option>
+        <option>Muay Thai</option>
+        <option>Boxing</option>
+        <option>Gym</option>
+      </select>
+    </div>
+
+    <div class="trainers-grid">
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=400&q=80" alt="Coach Irene flexing in a gym" />
+        <h2 class="trainer-card__name">Coach Irene</h2>
+        <ul class="tag-list">
+          <li class="tag tag--yoga">Yoga</li>
+          <li class="tag tag--zumba">Zumba</li>
+          <li class="tag tag--taekwondo">Taekwondo</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=400&q=80" alt="Coach Ken smiling outdoors" />
+        <h2 class="trainer-card__name">Coach Ken</h2>
+        <ul class="tag-list">
+          <li class="tag tag--muaythai">Muay Thai</li>
+          <li class="tag tag--taekwondo">Taekwondo</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=400&q=80" alt="Coach Ryan portrait" />
+        <h2 class="trainer-card__name">Coach Ryan</h2>
+        <ul class="tag-list">
+          <li class="tag tag--yoga">Yoga</li>
+          <li class="tag tag--boxing">Boxing</li>
+          <li class="tag tag--zumba">Zumba</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Coach Irene posing" />
+        <h2 class="trainer-card__name">Coach Irene</h2>
+        <ul class="tag-list">
+          <li class="tag tag--muaythai">Muay Thai</li>
+          <li class="tag tag--yoga">Yoga</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1583468982228-19f19164aee2?auto=format&fit=crop&w=400&q=80" alt="Coach Vince in the gym" />
+        <h2 class="trainer-card__name">Coach Vince</h2>
+        <ul class="tag-list">
+          <li class="tag tag--yoga">Yoga</li>
+          <li class="tag tag--zumba">Zumba</li>
+          <li class="tag tag--taekwondo">Taekwondo</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+      <article class="trainer-card">
+        <img class="trainer-card__photo" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Coach Kyroll sitting outdoors" />
+        <h2 class="trainer-card__name">Coach Kyroll</h2>
+        <ul class="tag-list">
+          <li class="tag tag--taekwondo">Taekwondo</li>
+          <li class="tag tag--boxing">Boxing</li>
+          <li class="tag tag--gym">Gym</li>
+        </ul>
+      </article>
+
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Feedback · GTG Fitness</title>
+<meta name="description" content="Send feedback to GTG Fitness." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <header class="app-topbar">
+    <a href="dashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <button type="button" class="app-topbar__settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li class="is-active"><a href="feedback.html" aria-current="page">Feedback</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+        <span class="visually-hidden">Log out</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <section class="card feedback-card">
+      <h1 class="page-title">Help us grow!</h1>
+
+      <form>
+
+        <div class="field-group">
+          <label id="feedback-for-label" for="feedback-for-summary">Feedback for:</label>
+          <details class="dropdown" id="feedback-for">
+            <summary id="feedback-for-summary">Choose a category</summary>
+            <div class="dropdown-list" role="listbox" aria-labelledby="feedback-for-label">
+              <button type="button" data-value="Facility">Facility</button>
+              <button type="button" data-value="Equipments">Equipments</button>
+              <button type="button" data-value="Cleanliness &amp; Maintenance">Cleanliness &amp; Maintenance</button>
+              <button type="button" data-value="Trainer">Trainer</button>
+            </div>
+          </details>
+          <input type="hidden" name="feedback-for" id="feedback-for-value" />
+        </div>
+
+        <div class="field-group" id="trainer-field">
+          <label id="trainer-label" for="trainer-summary">Trainer:</label>
+          <details class="dropdown" id="trainer">
+            <summary id="trainer-summary">Choose a trainer</summary>
+            <div class="dropdown-list" role="listbox" aria-labelledby="trainer-label">
+              <button type="button" data-value="Coach Irene">
+                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=60&q=80" alt="" />
+                Coach Irene
+              </button>
+              <button type="button" data-value="Coach Ken">
+                <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=60&q=80" alt="" />
+                Coach Ken
+              </button>
+              <button type="button" data-value="Coach Ryan">
+                <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=60&q=80" alt="" />
+                Coach Ryan
+              </button>
+              <button type="button" data-value="Coach Tiana">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=60&q=80" alt="" />
+                Coach Tiana
+              </button>
+            </div>
+          </details>
+          <input type="hidden" name="trainer" id="trainer-value" />
+        </div>
+
+        <fieldset class="field-group" style="border: none; padding: 0; margin: 0 0 1.5rem;">
+          <legend>Rate:</legend>
+          <div class="star-rating">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5"><span class="visually-hidden">5 stars</span>★</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4"><span class="visually-hidden">4 stars</span>★</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3"><span class="visually-hidden">3 stars</span>★</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2"><span class="visually-hidden">2 stars</span>★</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1"><span class="visually-hidden">1 star</span>★</label>
+          </div>
+        </fieldset>
+
+        <div class="field-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" class="textarea-native" placeholder="Type here.."></textarea>
+        </div>
+
+        <div class="feedback-submit-row">
+          <button type="submit" class="btn btn-navy">Submit</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+</div>
+
+<script>
+  // Populate custom dropdown summaries and hidden inputs on selection.
+  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+    var summary = dropdown.querySelector('summary');
+    var hiddenInput = dropdown.nextElementSibling;
+    dropdown.querySelectorAll('.dropdown-list button').forEach(function (option) {
+      option.addEventListener('click', function () {
+        summary.textContent = option.getAttribute('data-value');
+        if (hiddenInput && hiddenInput.type === 'hidden') {
+          hiddenInput.value = option.getAttribute('data-value');
+        }
+        dropdown.removeAttribute('open');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

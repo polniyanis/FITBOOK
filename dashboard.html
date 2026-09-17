@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · GTG Fitness</title>
+<meta name="description" content="Your GTG Fitness member dashboard." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<div class="app-shell app-shell--with-aside">
+
+  <header class="app-topbar">
+    <a href="dashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <button type="button" class="app-topbar__settings" aria-label="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li class="is-active"><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+        <span class="visually-hidden">Log out</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">Good morning, Rafaela!</h1>
+    <p class="page-subtitle">Every rep brings you closer, ready for your journey?</p>
+
+    <div class="dashboard-grid">
+
+      <div class="stack">
+        <section class="card" aria-labelledby="ongoing-heading">
+          <h2 id="ongoing-heading" class="card-heading">On-going Class</h2>
+          <span class="class-pill">YOGA</span>
+        </section>
+
+        <section class="card" aria-labelledby="enrolled-heading">
+          <h2 id="enrolled-heading" class="card-heading">Classes you Enrolled: <span class="badge-count">1</span></h2>
+          <p class="enrolled-item">Taekwondo</p>
+          <label for="subscribed-classes" class="visually-hidden">Subscribed classes</label>
+          <select id="subscribed-classes" class="select-native">
+            <option>Subscribed classes</option>
+            <option>Taekwondo</option>
+          </select>
+        </section>
+
+        <section class="card trainer-notes" aria-labelledby="notes-heading">
+          <h2 id="notes-heading" class="card-heading">Trainer Notes <span class="badge-count">1</span></h2>
+          <p><strong>Coach Irene:</strong> Hi Rafaela! Our next session for Taekwondo is all about Power Kicks &amp; Core Strength</p>
+          <ul>
+            <li><strong>Squat Jumps</strong> – Builds explosive leg power for higher kicks.</li>
+            <li><strong>Lunges with Twist</strong> – Strengthens legs and improves rotational core stability.</li>
+            <li><strong>Plank to Push-up</strong> – Enhances upper body strength and...</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="card" aria-labelledby="upcoming-heading">
+          <h2 id="upcoming-heading" class="card-heading">Upcoming Classes</h2>
+          <div class="upcoming-coach">
+            <img src="https://images.unsplash.com/photo-1615109398623-88346a601842?auto=format&fit=crop&w=150&q=80" alt="Coach Ash" />
+            <div>
+              <p class="upcoming-coach__name">Coach Ash</p>
+              <p class="upcoming-coach__class">Taekwondo</p>
+              <p class="upcoming-coach__time">1PM Tomorrow</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn-navy btn-block" onclick="document.getElementById('payment-modal').showModal()">Book class!</button>
+        </section>
+
+        <section class="card" aria-labelledby="achievements-heading">
+          <h2 id="achievements-heading" class="card-heading">Achievements</h2>
+          <div class="mini-achievements">
+            <div class="mini-achievement mini-achievement--green">
+              <span class="mini-achievement__icon" aria-hidden="true">🔥</span>
+              Consistency Streak
+            </div>
+            <div class="mini-achievement mini-achievement--blue">
+              <span class="mini-achievement__icon" aria-hidden="true">🚩</span>
+              Team Player
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <aside class="app-aside" aria-label="Profile summary">
+    <div class="profile-card">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="" />
+      <div>
+        <p class="profile-card__name">Madriaga, Rafaela</p>
+        <p class="profile-card__age">17 years old</p>
+      </div>
+    </div>
+
+    <dl class="profile-stats">
+      <div>
+        <dt>Height</dt>
+        <dd>6'1</dd>
+      </div>
+      <div>
+        <dt>Weight</dt>
+        <dd>65 kg</dd>
+      </div>
+      <div>
+        <dt>Gender</dt>
+        <dd>Female</dd>
+      </div>
+    </dl>
+
+    <div class="announcements">
+      <h2 class="card-heading">Today's Announcements</h2>
+      <p class="announcements__box">New Zumba schedule starts next week reserve your slot early!</p>
+    </div>
+
+    <div class="aside-heading">
+      <span>Attended Classes</span>
+      <span class="aside-heading__month">April 2026 ⌄</span>
+    </div>
+
+    <div class="mini-calendar" role="table" aria-label="April 2026 attended classes">
+      <span class="mini-calendar__head">Sun</span>
+      <span class="mini-calendar__head">Mon</span>
+      <span class="mini-calendar__head">Tue</span>
+      <span class="mini-calendar__head">Wed</span>
+      <span class="mini-calendar__head">Thurs</span>
+      <span class="mini-calendar__head">Fri</span>
+      <span class="mini-calendar__head">Sat</span>
+
+      <span class="mini-calendar__cell">1</span>
+      <span class="mini-calendar__cell">2</span>
+      <span class="mini-calendar__cell">3</span>
+      <span class="mini-calendar__cell">4</span>
+      <span class="mini-calendar__cell">5</span>
+      <span class="mini-calendar__cell">6</span>
+      <span class="mini-calendar__cell">7</span>
+
+      <span class="mini-calendar__cell">8</span>
+      <span class="mini-calendar__cell is-attended">9</span>
+      <span class="mini-calendar__cell">10</span>
+      <span class="mini-calendar__cell">11</span>
+      <span class="mini-calendar__cell">12</span>
+      <span class="mini-calendar__cell">13</span>
+      <span class="mini-calendar__cell">14</span>
+
+      <span class="mini-calendar__cell">15</span>
+      <span class="mini-calendar__cell">16</span>
+      <span class="mini-calendar__cell">17</span>
+      <span class="mini-calendar__cell">18</span>
+      <span class="mini-calendar__cell">19</span>
+      <span class="mini-calendar__cell">20</span>
+      <span class="mini-calendar__cell">21</span>
+
+      <span class="mini-calendar__cell">22</span>
+      <span class="mini-calendar__cell">23</span>
+      <span class="mini-calendar__cell">24</span>
+      <span class="mini-calendar__cell">25</span>
+      <span class="mini-calendar__cell">26</span>
+      <span class="mini-calendar__cell">27</span>
+      <span class="mini-calendar__cell">28</span>
+
+      <span class="mini-calendar__cell">29</span>
+      <span class="mini-calendar__cell">30</span>
+      <span class="mini-calendar__cell">31</span>
+      <span class="mini-calendar__cell"></span>
+      <span class="mini-calendar__cell"></span>
+      <span class="mini-calendar__cell"></span>
+      <span class="mini-calendar__cell"></span>
+    </div>
+
+    <div class="calendar-legend">
+      <span class="calendar-legend__dot" aria-hidden="true"></span>
+      Taekwondo
+    </div>
+  </aside>
+
+</div>
+
+<!-- Payment modal -->
+<dialog id="payment-modal" class="payment-modal">
+  <form method="dialog" class="payment-modal__inner">
+    <div class="payment-modal__header">
+      <h2>Payment</h2>
+      <button type="submit" class="payment-modal__close" aria-label="Close payment dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <h3>Select Payment:</h3>
+    <div class="pay-method-row">
+      <label class="pay-option">
+        <input type="radio" name="pay-method" value="gcash" checked />
+        GCash
+      </label>
+      <span>or</span>
+      <label class="pay-option">
+        <input type="radio" name="pay-method" value="card" />
+        Credit Card
+      </label>
+    </div>
+
+    <label for="pay-email" class="visually-hidden">Email</label>
+    <input type="email" id="pay-email" class="input-native" placeholder="Email" autocomplete="email" required />
+
+    <h3>Payment Method</h3>
+    <label for="card-number" class="visually-hidden">Card number</label>
+    <input type="text" id="card-number" class="input-native" placeholder="1234 1234 1234 1234" inputmode="numeric" autocomplete="cc-number" />
+
+    <div class="input-row">
+      <div>
+        <label for="card-exp" class="visually-hidden">Expiry date</label>
+        <input type="text" id="card-exp" class="input-native" placeholder="MM / YY" autocomplete="cc-exp" />
+      </div>
+      <div>
+        <label for="card-cvc" class="visually-hidden">CVC</label>
+        <input type="text" id="card-cvc" class="input-native" placeholder="CVC" inputmode="numeric" autocomplete="cc-csc" />
+      </div>
+    </div>
+
+    <h3>Cardholder name</h3>
+    <label for="card-name" class="visually-hidden">Full name on card</label>
+    <input type="text" id="card-name" class="input-native" placeholder="Full name on card" autocomplete="cc-name" />
+
+    <h3>Country or Region</h3>
+    <label for="country" class="visually-hidden">Country or region</label>
+    <select id="country" class="input-native select-native">
+      <option>Philippines</option>
+      <option>United States</option>
+      <option>Singapore</option>
+      <option>Australia</option>
+    </select>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="save-info" />
+      <label for="save-info">Save my Information for faster checkout</label>
+    </div>
+
+    <div class="payment-modal__actions">
+      <button type="submit" class="btn btn-navy">Continue</button>
+    </div>
+  </form>
+</dialog>
+
+</body>
+</html>
