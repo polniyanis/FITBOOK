@@ -101,10 +101,6 @@
         <button type="button" class="classes-arrow" aria-expanded="false" aria-controls="gym-extra-panel" aria-label="Show walk-in pricing">▶</button>
       </article>
 
-      <!-- Reserves room in the flex row for the pricing panel above,
-           which is position: absolute and so can't push anything on
-           its own. Stays empty and collapsed (display: none) until the
-           panel next to it opens — see .gym-panel-spacer in app.css. -->
       <div class="gym-panel-spacer" aria-hidden="true"></div>
 
       <article class="class-card">
@@ -189,58 +185,23 @@
     <p class="payment-modal__subtitle" id="payment-summary-line">Class · 1 Session · Total: ₱0</p>
 
     <div class="field-group">
-      <label id="pay-method-label">Select Payment:</label>
-      <div class="pay-method-row" role="radiogroup" aria-labelledby="pay-method-label">
-        <label class="pay-option">
-          <input type="radio" name="pay-method" value="gcash" id="pay-method-gcash" />
+      <label>Payment Method:</label>
+      <div class="pay-method-row">
+        <div class="pay-option pay-option--active">
           <img class="gcash-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg" alt="GCash" />
-        </label>
-        <span>or</span>
-        <label class="pay-option">
-          <input type="radio" name="pay-method" value="card" id="pay-method-card" checked />
-          <span class="card-brand-badge" aria-hidden="true">
-            <svg viewBox="0 0 40 22" width="40" height="22">
-              <rect x="0.5" y="0.5" width="39" height="21" rx="3" fill="#ffffff" stroke="#d8d8d6"></rect>
-              <text x="5" y="14.5" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="8" font-style="italic" fill="#1a1f71">VISA</text>
-              <circle cx="27" cy="11" r="6" fill="#eb001b" opacity="0.9"></circle>
-              <circle cx="33" cy="11" r="6" fill="#f79e1b" opacity="0.85"></circle>
-            </svg>
-          </span>
-          <span class="pay-option__text">Credit Card</span>
-        </label>
+        </div>
       </div>
     </div>
 
     <label for="pm-email" class="visually-hidden">Email</label>
     <input type="email" id="pm-email" class="input-native" placeholder="Email" autocomplete="email" />
 
-    <div id="gcash-panel" hidden>
+    <div id="gcash-panel">
       <h3>Scan to Pay</h3>
       <div class="qr-payment">
         <img id="pm-qr-image" src="" alt="GCash payment QR code" />
         <p class="qr-payment__caption">Scan with your GCash app to pay <strong id="pm-qr-amount">₱0</strong></p>
       </div>
-    </div>
-
-    <div id="card-panel">
-      <h3>Payment Method</h3>
-      <label for="pm-card-number" class="visually-hidden">Card number</label>
-      <input type="text" id="pm-card-number" class="input-native" placeholder="1234 1234 1234 1234" inputmode="numeric" />
-
-      <div class="input-row">
-        <div>
-          <label for="pm-card-expiry" class="visually-hidden">Expiry date</label>
-          <input type="text" id="pm-card-expiry" class="input-native" placeholder="MM / YY" />
-        </div>
-        <div>
-          <label for="pm-card-cvc" class="visually-hidden">CVC</label>
-          <input type="text" id="pm-card-cvc" class="input-native" placeholder="CVC" inputmode="numeric" />
-        </div>
-      </div>
-
-      <h3>Cardholder name</h3>
-      <label for="pm-card-name" class="visually-hidden">Cardholder name</label>
-      <input type="text" id="pm-card-name" class="input-native" placeholder="Full name on card" />
     </div>
 
     <h3>Country or Region</h3>
