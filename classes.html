@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Classes · GTG Fitness</title>
+<meta name="description" content="Book a class at GTG Fitness." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css?v=10" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <header class="app-topbar">
+    <a href="dashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <details class="settings-menu">
+      <summary class="app-topbar__settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+        </svg>
+      </summary>
+      <div class="settings-panel">
+        <div class="settings-panel__profile">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="" />
+          <div>
+            <p class="settings-panel__profile-name">Madriaga, Rafaela</p>
+            <p class="settings-panel__profile-sub">Member</p>
+          </div>
+        </div>
+        <a href="edit-profile.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit Profile
+        </a>
+        <div class="settings-panel__divider"></div>
+        <a href="index.html" class="settings-panel__logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="M16 17l5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </details>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="calendar.html">Calendar</a></li>
+      <li class="is-active"><a href="classes.html" aria-current="page">Classes</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">Book your Class now!</h1>
+
+    <div class="classes-grid">
+
+      <article class="class-card class-card--gym gym-card-size">
+        <h2 class="class-card__title">Gym use</h2>
+        <p class="class-card__desc">Push limits with intense weight training.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/736x/1c/37/ea/1c37ea13ad98c0f70e396dafaf224934.jpg" alt="Person training with weights in a gym" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="gym" data-name="Gym use">Book Session</button>
+
+        <div class="class-extra-panel" id="gym-extra-panel" aria-hidden="true">
+          <div class="class-extra-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy-deep)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="4" r="1.7" fill="var(--navy-deep)" stroke="none"></circle>
+              <path d="M13 7 10 11 11 16 9 21 M13 7 15 11 14 16 16 21 M13 7 17 9 M10 11 7 9"></path>
+            </svg>
+          </div>
+          <h3 class="class-extra-panel__title">BASIC ACCESS</h3>
+          <p class="class-extra-panel__subtitle">(Walk-in)</p>
+          <div class="class-extra-panel__divider"></div>
+          <ul class="class-extra-panel__list">
+            <li>
+              <span class="class-extra-panel__label"><span class="class-extra-panel__icon-sm" aria-hidden="true">🏋️</span> Gym use</span>
+              <span class="class-extra-panel__price">₱100</span>
+            </li>
+            <li>
+              <span class="class-extra-panel__label"><span class="class-extra-panel__icon-sm" aria-hidden="true">👥</span> Group class</span>
+              <span class="class-extra-panel__price">₱200</span>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="classes-arrow" aria-expanded="false" aria-controls="gym-extra-panel" aria-label="Show walk-in pricing">▶</button>
+      </article>
+
+      <!-- Reserves room in the flex row for the pricing panel above,
+           which is position: absolute and so can't push anything on
+           its own. Stays empty and collapsed (display: none) until the
+           panel next to it opens — see .gym-panel-spacer in app.css. -->
+      <div class="gym-panel-spacer" aria-hidden="true"></div>
+
+      <article class="class-card">
+        <h2 class="class-card__title">Boxing</h2>
+        <p class="class-card__desc">Build strength with powerful boxing drills.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/1200x/d4/c5/a4/d4c5a4438599eb6fb4c52210479ea360.jpg" alt="Two boxers sparring in a ring" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="boxing" data-name="Boxing">Book Session</button>
+      </article>
+
+      <article class="class-card">
+        <h2 class="class-card__title">Muay Thai</h2>
+        <p class="class-card__desc">Burn calories with intense training.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/736x/72/93/ce/7293cedcc7bf9d2b996e9acaaba9a259.jpg" alt="Muay Thai fighters training" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="muaythai" data-name="Muay Thai">Book Session</button>
+      </article>
+
+      <article class="class-card">
+        <h2 class="class-card__title">Taekwondo</h2>
+        <p class="class-card__desc">Learn kicks, blocks, and techniques.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/736x/26/75/8b/26758b26cda1b16782177c32a150c38d.jpg" alt="Taekwondo athletes sparring" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="taekwondo" data-name="Taekwondo">Book Session</button>
+      </article>
+
+      <article class="class-card">
+        <h2 class="class-card__title">Zumba</h2>
+        <p class="class-card__desc">Dance, move, and burn calories.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/736x/c5/f8/05/c5f80547860391d2309782b42af1b9e3.jpg" alt="Group Zumba dance class" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="zumba" data-name="Zumba">Book Session</button>
+      </article>
+
+      <article class="class-card">
+        <h2 class="class-card__title">Yoga</h2>
+        <p class="class-card__desc">Strengthen and stretch your body.</p>
+        <img class="class-card__img" src="https://i.pinimg.com/736x/9d/f2/8a/9df28a982202124136a5773fd8564171.jpg" alt="Person in a yoga stretch pose" />
+        <button type="button" class="btn btn-navy book-session-btn" data-class="yoga" data-name="Yoga">Book Session</button>
+      </article>
+
+    </div>
+  </main>
+
+</div>
+
+<dialog class="payment-modal booking-modal" id="booking-modal">
+  <div class="payment-modal__inner">
+    <div class="payment-modal__header">
+      <h2 id="booking-modal-title">Class</h2>
+      <button type="button" class="payment-modal__close" aria-label="Close" data-close-dialog="booking-modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="field-group">
+      <label>How many Sessions?</label>
+      <div class="session-options" id="session-options">
+        <button type="button" class="session-option" data-sessions="1">1 Session</button>
+        <button type="button" class="session-option" data-sessions="2">2 Sessions</button>
+        <button type="button" class="session-option" data-sessions="3">3 Sessions</button>
+      </div>
+    </div>
+
+    <div class="booking-footer">
+      <p class="booking-total">Total: <strong id="booking-total-amount">₱0</strong></p>
+      <button type="button" class="btn btn-navy booking-continue-btn" id="booking-continue-btn" disabled>Continue</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="payment-modal booking-modal" id="payment-modal">
+
+  <div class="payment-modal__inner" id="payment-form-view">
+    <div class="payment-modal__header">
+      <h2>Payment</h2>
+      <button type="button" class="payment-modal__close" aria-label="Close" data-close-dialog="payment-modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 6 6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p class="payment-modal__subtitle" id="payment-summary-line">Class · 1 Session · Total: ₱0</p>
+
+    <div class="field-group">
+      <label id="pay-method-label">Select Payment:</label>
+      <div class="pay-method-row" role="radiogroup" aria-labelledby="pay-method-label">
+        <label class="pay-option">
+          <input type="radio" name="pay-method" value="gcash" id="pay-method-gcash" />
+          <img class="gcash-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg" alt="GCash" />
+        </label>
+        <span>or</span>
+        <label class="pay-option">
+          <input type="radio" name="pay-method" value="card" id="pay-method-card" checked />
+          <span class="card-brand-badge" aria-hidden="true">
+            <svg viewBox="0 0 40 22" width="40" height="22">
+              <rect x="0.5" y="0.5" width="39" height="21" rx="3" fill="#ffffff" stroke="#d8d8d6"></rect>
+              <text x="5" y="14.5" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="8" font-style="italic" fill="#1a1f71">VISA</text>
+              <circle cx="27" cy="11" r="6" fill="#eb001b" opacity="0.9"></circle>
+              <circle cx="33" cy="11" r="6" fill="#f79e1b" opacity="0.85"></circle>
+            </svg>
+          </span>
+          <span class="pay-option__text">Credit Card</span>
+        </label>
+      </div>
+    </div>
+
+    <label for="pm-email" class="visually-hidden">Email</label>
+    <input type="email" id="pm-email" class="input-native" placeholder="Email" autocomplete="email" />
+
+    <div id="gcash-panel" hidden>
+      <h3>Scan to Pay</h3>
+      <div class="qr-payment">
+        <img id="pm-qr-image" src="" alt="GCash payment QR code" />
+        <p class="qr-payment__caption">Scan with your GCash app to pay <strong id="pm-qr-amount">₱0</strong></p>
+      </div>
+    </div>
+
+    <div id="card-panel">
+      <h3>Payment Method</h3>
+      <label for="pm-card-number" class="visually-hidden">Card number</label>
+      <input type="text" id="pm-card-number" class="input-native" placeholder="1234 1234 1234 1234" inputmode="numeric" />
+
+      <div class="input-row">
+        <div>
+          <label for="pm-card-expiry" class="visually-hidden">Expiry date</label>
+          <input type="text" id="pm-card-expiry" class="input-native" placeholder="MM / YY" />
+        </div>
+        <div>
+          <label for="pm-card-cvc" class="visually-hidden">CVC</label>
+          <input type="text" id="pm-card-cvc" class="input-native" placeholder="CVC" inputmode="numeric" />
+        </div>
+      </div>
+
+      <h3>Cardholder name</h3>
+      <label for="pm-card-name" class="visually-hidden">Cardholder name</label>
+      <input type="text" id="pm-card-name" class="input-native" placeholder="Full name on card" />
+    </div>
+
+    <h3>Country or Region</h3>
+    <label for="pm-country" class="visually-hidden">Country or region</label>
+    <select id="pm-country" class="input-native select-native">
+      <option>Philippines</option>
+      <option>United States</option>
+      <option>Singapore</option>
+      <option>Australia</option>
+    </select>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="pm-save-info" />
+      <label for="pm-save-info">Save my Information for faster checkout</label>
+    </div>
+
+    <div class="payment-modal__actions">
+      <button type="button" class="btn btn-navy booking-continue-btn" id="payment-confirm-btn">Continue</button>
+    </div>
+  </div>
+
+  <div class="payment-modal__inner payment-success-view" id="payment-success-view" hidden>
+    <div class="payment-success__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="m8 12 3 3 5-6"></path>
+      </svg>
+    </div>
+    <h2 class="payment-success__title">Payment confirmed!</h2>
+    <p class="payment-success__subtitle" id="payment-success-line">Your session is booked.</p>
+    <button type="button" class="btn btn-navy booking-continue-btn payment-success__close" data-close-dialog="payment-modal">Back to Classes</button>
+  </div>
+</dialog>
+
+<script src="classes.js"></script>
+</body>
+</html>

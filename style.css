@@ -1,0 +1,600 @@
+:root {
+  
+  --navy-header: #14304a;
+  --navy-accent: #1f4e79;
+  --navy-accent-hover: #2b6296;
+  --black-panel: #0b0b0c;
+  --white: #ffffff;
+  --gray-input-bg: #e9e9e9;
+  --gray-input-text: #6b6b6b;
+  --gray-muted: #b7b7b7;
+  --border-light: rgba(255, 255, 255, 0.18);
+
+  
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-logo: "BBH Bogle", "Anton", "Arial Narrow", sans-serif;
+
+  
+  --radius-pill: 999px;
+  --radius-md: 10px;
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--black-panel);
+  color: var(--white);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Accessible focus ring */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--navy-accent-hover);
+  outline-offset: 2px;
+}
+
+
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: var(--header-height) 1fr;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--navy-header);
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1.25rem, 3vw, 2.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-header__logo {
+  font-family: var(--font-logo);
+  font-size: 2rem;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 42%) 1fr;
+}
+
+
+.auth-panel {
+  background-color: var(--black-panel);
+  display: flex;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.auth-form-wrap {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.auth-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.auth-title span {
+  color: var(--navy-accent-hover);
+}
+
+.auth-subtitle {
+  margin: 0 0 1.75rem;
+  color: var(--gray-muted);
+  font-size: 0.98rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field__icon {
+  position: absolute;
+  left: 1.1rem;
+  width: 18px;
+  height: 18px;
+  color: var(--gray-input-text);
+  pointer-events: none;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.9rem 1.1rem 0.9rem 2.75rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--navy-accent);
+  background-color: var(--gray-input-bg);
+  color: #222;
+  font-size: 0.98rem;
+}
+
+.field input::placeholder {
+  color: var(--gray-input-text);
+}
+
+.field--toggle input {
+  padding-right: 2.75rem;
+}
+
+.field__toggle-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  cursor: pointer;
+  color: var(--gray-input-text);
+}
+
+.field__toggle-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.form-links {
+  text-align: center;
+  margin: 0.15rem 0 0.5rem;
+}
+
+.form-links a {
+  color: var(--gray-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--gray-muted);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.1rem;
+  accent-color: var(--navy-accent-hover);
+  flex-shrink: 0;
+}
+
+.checkbox-row a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--white);
+  color: var(--white);
+  flex: 1;
+}
+
+.btn-outline:hover {
+  background-color: var(--white);
+  color: var(--black-panel);
+}
+
+.btn-solid {
+  background-color: var(--navy-accent);
+  color: var(--white);
+  flex: 1;
+}
+
+.btn-solid:hover {
+  background-color: var(--navy-accent-hover);
+  box-shadow: 0 6px 18px rgba(43, 98, 150, 0.45);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.form-footnote {
+  text-align: center;
+  margin-top: 1.4rem;
+  font-size: 0.92rem;
+  color: var(--gray-muted);
+}
+
+.form-footnote a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.form-footnote a:hover {
+  color: var(--navy-accent-hover);
+  text-decoration: underline;
+}
+
+
+.auth-visual {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.auth-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(0.85);
+}
+
+.auth-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.visual-contact {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.visual-contact li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.visual-contact li:first-child {
+  font-family: var(--font-logo);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+}
+
+.visual-contact svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.visual-contact ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.visual-eye {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.visual-eye svg {
+  width: 26px;
+  height: 26px;
+}
+
+
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 260px;
+  }
+
+  .auth-visual {
+    order: 2;
+  }
+
+  .auth-panel {
+    order: 1;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+
+  .visual-contact li:first-child {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .name-row {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-row {
+    flex-direction: column;
+  }
+
+  .auth-title {
+    font-size: 1.7rem;
+  }
+
+  .site-header {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   Login page: fixed to the window, no page scrolling
+   (scoped to body.fixed-page so Sign Up is unaffected)
+   ========================================================== */
+html:has(body.fixed-page),
+body.fixed-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.fixed-page .page {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  grid-template-rows: var(--header-height) minmax(0, 1fr);
+}
+
+body.fixed-page .auth-layout {
+  min-height: 0;
+}
+
+/* only scrolls internally if the window is too short to fit the form */
+body.fixed-page .auth-panel {
+  overflow-y: auto;
+}
+
+/* Photo: fills the panel (zoomed in) and is anchored so both people's
+   faces and the dumbbells stay in view. Nudge the % to move it up/down. */
+body.fixed-page .auth-visual img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+body.fixed-page .auth-visual::before {
+  z-index: 2;
+}
+
+body.fixed-page .visual-contact,
+body.fixed-page .visual-eye {
+  z-index: 3;
+}
+
+/* Bigger login form */
+body.fixed-page .auth-form-wrap {
+  max-width: 560px;
+}
+
+body.fixed-page .auth-title {
+  font-size: clamp(2.1rem, 6.2vh, 3.6rem);
+  margin-bottom: 0.6rem;
+}
+
+body.fixed-page .auth-subtitle {
+  font-size: clamp(1rem, 2.4vh, 1.25rem);
+  margin-bottom: clamp(1.25rem, 4vh, 2.5rem);
+}
+
+body.fixed-page .auth-form {
+  gap: clamp(0.85rem, 2.2vh, 1.4rem);
+}
+
+body.fixed-page .field input {
+  padding: clamp(0.9rem, 2.3vh, 1.25rem) 1.5rem clamp(0.9rem, 2.3vh, 1.25rem) 3.75rem;
+  font-size: 1.2rem;
+}
+
+body.fixed-page .field--toggle input {
+  padding-right: 3.75rem;
+}
+
+body.fixed-page .field__icon {
+  left: 1.5rem;
+  width: 24px;
+  height: 24px;
+}
+
+body.fixed-page .field__toggle-btn {
+  right: 1.5rem;
+}
+
+body.fixed-page .field__toggle-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+body.fixed-page .form-links a {
+  font-size: 1.1rem;
+}
+
+body.fixed-page .btn {
+  padding: clamp(0.9rem, 2.2vh, 1.2rem) 1.75rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+body.fixed-page .form-footnote {
+  font-size: 1.1rem;
+  margin-top: clamp(1rem, 2.6vh, 1.75rem);
+}
+
+@media (max-width: 900px) {
+  body.fixed-page .auth-layout {
+    grid-template-rows: minmax(0, 1fr) 180px;
+  }
+
+  body.fixed-page .auth-visual img {
+    object-position: center 34%;
+  }
+}
+
+/* Inline form messages (replaces alert popups) */
+.form-error {
+  display: none;
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: rgba(220, 53, 69, 0.14);
+  border: 1.5px solid #dc3545;
+  color: #ff8b95;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.form-error.is-visible { display: block; }
+.field.has-error input { border-color: #dc3545; background-color: #fbe9eb; }
+
+/* ---- Signup uses the SAME sizes as login; only trims outer spacing ---- */
+body.fixed-page.signup-page .auth-panel { padding-block: clamp(0.5rem, 1.5vh, 2rem); }
+body.fixed-page.signup-page .auth-subtitle { margin-bottom: clamp(0.75rem, 2.4vh, 1.75rem); }
+body.fixed-page.signup-page .checkbox-row { font-size: 1.1rem; margin: 0; }
+body.fixed-page.signup-page .checkbox-row input[type="checkbox"] { width: 22px; height: 22px; }
+body.fixed-page.signup-page .form-error { padding: 0.5rem 1rem; font-size: 0.95rem; }
+
+/* Only on short windows: shrink signup a little so it still fits without scrolling */
+@media (max-height: 640px) {
+  body.fixed-page.signup-page .auth-title { font-size: clamp(1.5rem, 5vh, 3rem); margin-bottom: 0.3rem; }
+  body.fixed-page.signup-page .auth-subtitle { font-size: clamp(0.85rem, 2vh, 1.15rem); }
+  body.fixed-page.signup-page .auth-form,
+  body.fixed-page.signup-page .name-row { gap: clamp(0.4rem, 1.3vh, 1rem); }
+  body.fixed-page.signup-page .field input {
+    font-size: clamp(0.9rem, 2.3vh, 1.2rem);
+    padding-top: clamp(0.5rem, 1.5vh, 1rem);
+    padding-bottom: clamp(0.5rem, 1.5vh, 1rem);
+  }
+  body.fixed-page.signup-page .field__icon,
+  body.fixed-page.signup-page .field__toggle-btn svg { width: clamp(18px, 2.8vh, 24px); height: clamp(18px, 2.8vh, 24px); }
+  body.fixed-page.signup-page .checkbox-row { font-size: clamp(0.85rem, 2vh, 1.1rem); }
+  body.fixed-page.signup-page .btn {
+    padding-top: clamp(0.55rem, 1.6vh, 1.1rem);
+    padding-bottom: clamp(0.55rem, 1.6vh, 1.1rem);
+    font-size: clamp(0.95rem, 2.3vh, 1.2rem);
+  }
+  body.fixed-page.signup-page .form-footnote { font-size: clamp(0.85rem, 2vh, 1.1rem); margin-top: clamp(0.5rem, 1.5vh, 1.5rem); }
+}
+
+/* ---- Bigger contact text over the photo (login + signup) ---- */
+body.fixed-page .visual-contact { gap: clamp(0.5rem, 1.2vh, 0.9rem); }
+body.fixed-page .visual-contact li {
+  font-size: clamp(1.2rem, 3vh, 1.75rem);
+  gap: 0.75rem;
+}
+body.fixed-page .visual-contact li:first-child { font-size: clamp(1.5rem, 3.8vh, 2.25rem); }
+body.fixed-page .visual-contact svg { width: 1.3em; height: 1.3em; }
+body.fixed-page .visual-contact a { display: flex; align-items: center; gap: 0.75rem; }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Payment · GTG Fitness</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="payment.css" />
+</head>
+<body>
+
+<header class="pay-topbar">
+  <a href="classes.html" class="pay-topbar__logo">GTG FITNESS</a>
+</header>
+
+<main class="pay-main">
+  <div class="pay-card" id="pay-card">
+
+    <a href="classes.html" class="pay-back">&larr; Back to Classes</a>
+
+    <h1 class="pay-card__title" id="pay-class-name">Class</h1>
+    <p class="pay-card__subtitle" id="pay-sessions-line">1 Session</p>
+
+    <div class="pay-summary">
+      <span>Total</span>
+      <strong id="pay-amount">₱0</strong>
+    </div>
+
+    <div class="pay-method">
+      <span class="pay-method__label">Pay via</span>
+      <span class="gcash-badge">
+        <img class="gcash-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg" alt="GCash" />
+      </span>
+    </div>
+
+    <div class="qr-box">
+      <img id="qr-image" src="" alt="GCash payment QR code" />
+      <p class="qr-box__caption">Scan with your GCash app to pay <strong id="qr-amount">₱0</strong></p>
+    </div>
+
+    <p class="pay-hint">A reference number will be emailed once payment is confirmed.</p>
+
+    <label class="pay-checkbox">
+      <input type="checkbox" id="pay-agree" />
+      I agree to the cancellation &amp; refund policy.
+    </label>
+
+    <button type="button" class="pay-confirm-btn" id="pay-confirm-btn">Confirm Payment</button>
+  </div>
+
+  <div class="pay-card pay-success" id="pay-success" hidden>
+    <div class="pay-success__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="m8 12 3 3 5-6"></path>
+      </svg>
+    </div>
+    <h1 class="pay-card__title">Payment confirmed!</h1>
+    <p class="pay-card__subtitle" id="pay-success-line">Your session is booked.</p>
+    <a href="classes.html" class="pay-confirm-btn pay-confirm-btn--link">Back to Classes</a>
+  </div>
+</main>
+
+<script src="payment.js"></script>
+</body>
+</html>
