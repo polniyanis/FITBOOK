@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard · GTG Fitness</title>
+<meta name="description" content="GTG Fitness admin dashboard — attendance, revenue, and daily operations overview." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<div class="app-shell app-shell--with-aside">
+
+  <header class="app-topbar">
+    <a href="admindashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <details class="settings-menu">
+      <summary class="app-topbar__settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+        </svg>
+      </summary>
+      <div class="settings-panel">
+        <div class="settings-panel__profile">
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80" alt="" />
+          <div>
+            <p class="settings-panel__profile-name">Santos, Rue</p>
+            <p class="settings-panel__profile-sub">Admin</p>
+          </div>
+        </div>
+        <a href="edit-profile-admin.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit Profile
+        </a>
+        <div class="settings-panel__divider"></div>
+        <a href="index.html" class="settings-panel__logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="M16 17l5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </details>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li class="is-active"><a href="admindashboard.html" aria-current="page">Dashboard</a></li>
+      <li><a href="#">Calendar</a></li>
+      <li><a href="#">Members Management</a></li>
+      <li><a href="#">Class Management</a></li>
+      <li><a href="#">Trainer Management</a></li>
+      <li><a href="#">Employee Management</a></li>
+      <li><a href="#">Feedback Summary</a></li>
+      <li><a href="#">Performance Analytics</a></li>
+    </ul>
+  </nav>
+
+  <main class="app-main">
+
+    <section class="hero-banner">
+      <h1>Good morning, Rue!</h1>
+      <p>Every rep brings you closer, ready for your journey?</p>
+    </section>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <p class="stat-card__label">Attendees Today</p>
+        <p class="stat-card__value">21</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-card__label">Total Revenue Today</p>
+        <p class="stat-card__value"><span class="currency">₱</span> 1,300.00</p>
+      </div>
+    </div>
+
+    <div class="split-card">
+      <div class="split-card__section">
+        <h2>On-going Class</h2>
+        <span class="class-pill">YOGA</span>
+      </div>
+      <div class="split-card__divider" aria-hidden="true"></div>
+      <div class="split-card__section">
+        <h2>Attendees for this class</h2>
+        <p class="split-card__stat">4</p>
+      </div>
+    </div>
+
+    <div class="table-section-header">
+      <h2>Today's Check in and out Log</h2>
+      <div class="table-filters">
+        <label for="role-filter" class="visually-hidden">Filter by role</label>
+        <select id="role-filter" class="select-native">
+          <option value="all">All Role</option>
+          <option value="member">Member</option>
+          <option value="nonmember">NonMember</option>
+        </select>
+        <label for="class-filter" class="visually-hidden">Filter by class</label>
+        <select id="class-filter" class="select-native">
+          <option value="all">All Classes</option>
+          <option value="zumba">Zumba</option>
+          <option value="yoga">Yoga</option>
+          <option value="boxing">Boxing</option>
+          <option value="taekwondo">Taekwondo</option>
+          <option value="muay thai">Muay Thai</option>
+          <option value="gym">Gym</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="data-table" id="checkin-table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Time-in</th>
+            <th scope="col">Time-out</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-role="nonmember" data-class="zumba">
+            <td>21</td><td>Jasmine</td><td>Mosura</td><td>12:42 PM</td><td>8:05 AM</td><td>NonMember</td>
+          </tr>
+          <tr data-role="member" data-class="yoga">
+            <td>20</td><td>Francis</td><td>Madriaga</td><td>11:18 AM</td><td>10:20 AM</td><td>Member</td>
+          </tr>
+          <tr data-role="nonmember" data-class="boxing">
+            <td>19</td><td>Eugene</td><td>Balando</td><td>11:10 AM</td><td>12:00 PM</td><td>NonMember</td>
+          </tr>
+          <tr data-role="member" data-class="taekwondo">
+            <td>18</td><td>Christoph</td><td>Estenilo</td><td>9:30 AM</td><td>2:35 PM</td><td>Member</td>
+          </tr>
+          <tr data-role="nonmember" data-class="muay thai">
+            <td>17</td><td>Avril</td><td>Felix</td><td>9:27 AM</td><td>4:15 PM</td><td>NonMember</td>
+          </tr>
+          <tr data-role="member" data-class="gym">
+            <td>16</td><td>RJ</td><td>Nalda</td><td>8:12 AM</td><td>7:00 PM</td><td>Member</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__empty" id="checkin-empty" hidden>No check-ins match these filters.</p>
+    </div>
+
+  </main>
+
+  <aside class="app-aside" aria-label="Profile summary">
+    <div class="profile-card">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=80" alt="" />
+      <div>
+        <p class="profile-card__name">Santos, Rue</p>
+        <p class="profile-card__age">20 years old</p>
+      </div>
+    </div>
+
+    <dl class="profile-stats">
+      <div>
+        <dt>Height</dt>
+        <dd>6'1</dd>
+      </div>
+      <div>
+        <dt>Weight</dt>
+        <dd>65 kg</dd>
+      </div>
+      <div>
+        <dt>Gender</dt>
+        <dd>Female</dd>
+      </div>
+    </dl>
+
+    <div class="announcement-card-header">
+      <h2>Today's Announcements</h2>
+      <div class="announcement-actions">
+        <button type="button" class="icon-btn" id="add-announcement" aria-label="Add announcement">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+        </button>
+        <button type="button" class="icon-btn" id="clear-announcements" aria-label="Clear all announcements">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="announcement-box" id="announcement-box">
+      <div class="announcement-box__item">
+        <span>New Zumba schedule starts next week reserve your slot early!</span>
+        <button type="button" aria-label="Remove announcement">&times;</button>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<script>
+  
+  var roleFilter = document.getElementById('role-filter');
+  var classFilter = document.getElementById('class-filter');
+  var rows = document.querySelectorAll('#checkin-table tbody tr');
+  var emptyState = document.getElementById('checkin-empty');
+
+  function applyLogFilters() {
+    var role = roleFilter.value;
+    var cls = classFilter.value;
+    var visibleCount = 0;
+
+    rows.forEach(function (row) {
+      var matchesRole = role === 'all' || row.getAttribute('data-role') === role;
+      var matchesClass = cls === 'all' || row.getAttribute('data-class') === cls;
+      var matches = matchesRole && matchesClass;
+      row.classList.toggle('is-hidden', !matches);
+      if (matches) visibleCount++;
+    });
+
+    emptyState.hidden = visibleCount !== 0;
+  }
+
+  roleFilter.addEventListener('change', applyLogFilters);
+  classFilter.addEventListener('change', applyLogFilters);
+
+  
+  var announcementBox = document.getElementById('announcement-box');
+
+  function createAnnouncementItem(text) {
+    var item = document.createElement('div');
+    item.className = 'announcement-box__item';
+
+    var span = document.createElement('span');
+    span.textContent = text;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Remove announcement');
+    btn.innerHTML = '&times;';
+    btn.addEventListener('click', function () {
+      item.remove();
+      checkEmptyAnnouncements();
+    });
+
+    item.appendChild(span);
+    item.appendChild(btn);
+    return item;
+  }
+
+  function checkEmptyAnnouncements() {
+    if (!announcementBox.querySelector('.announcement-box__item')) {
+      if (!document.getElementById('announcement-empty')) {
+        var empty = document.createElement('p');
+        empty.className = 'announcement-box__empty';
+        empty.id = 'announcement-empty';
+        empty.textContent = 'No announcements yet.';
+        announcementBox.appendChild(empty);
+      }
+    }
+  }
+
+  document.getElementById('add-announcement').addEventListener('click', function () {
+    var text = window.prompt('New announcement:');
+    if (text && text.trim()) {
+      var emptyMsg = document.getElementById('announcement-empty');
+      if (emptyMsg) emptyMsg.remove();
+      announcementBox.appendChild(createAnnouncementItem(text.trim()));
+    }
+  });
+
+  document.getElementById('clear-announcements').addEventListener('click', function () {
+    announcementBox.innerHTML = '';
+    checkEmptyAnnouncements();
+  });
+
+  document.querySelectorAll('.announcement-box__item button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.closest('.announcement-box__item').remove();
+      checkEmptyAnnouncements();
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.settings-menu[open]').forEach(function (d) {
+      if (!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+</script>
+</body>
+</html>

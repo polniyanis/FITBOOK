@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trainer Dashboard · GTG Fitness</title>
+<meta name="description" content="GTG Fitness trainer dashboard — today's classes, attendees, and assigned sessions." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="trainerdashboard.css" />
+</head>
+<body>
+
+<div class="app-shell app-shell--with-aside">
+
+  <header class="app-topbar">
+    <a href="trainerdashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <details class="settings-menu">
+      <summary class="app-topbar__settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+        </svg>
+      </summary>
+      <div class="settings-panel">
+        <div class="settings-panel__profile">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=100&q=80" alt="" />
+          <div>
+            <p class="settings-panel__profile-name">Navarro, Irene Celeste</p>
+            <p class="settings-panel__profile-sub">Trainer</p>
+          </div>
+        </div>
+        <a href="edit-profile-trainer.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit Profile
+        </a>
+        <div class="settings-panel__divider"></div>
+        <a href="index.html" class="settings-panel__logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="M16 17l5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </details>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li class="is-active"><a href="trainerdashboard.html" aria-current="page">Dashboard</a></li>
+      <li><a href="trainercalendar.html">Calendar</a></li>
+      <li><a href="#">Member Progress</a></li>
+      <li><a href="#">Trainer Availability</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html" aria-label="Log out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <h1 class="page-title">Good morning, Irene!</h1>
+    <p class="page-subtitle">Every rep brings you closer, ready for your journey?</p>
+
+    <div class="trainer-stack">
+
+      <section class="card stat-card" aria-labelledby="attendees-heading">
+        <h2 id="attendees-heading" class="stat-card__label">Attendees Today</h2>
+        <p class="stat-card__value">21</p>
+      </section>
+
+      <section class="card split-card" aria-label="Ongoing class summary">
+        <div class="split-card__section">
+          <h2>On-going Class</h2>
+          <span class="class-pill">YOGA</span>
+        </div>
+        <div class="split-card__divider" aria-hidden="true"></div>
+        <div class="split-card__section">
+          <h2>Attendees for this class</h2>
+          <p class="split-card__stat">4</p>
+        </div>
+      </section>
+
+      <section class="card log-card" aria-labelledby="log-heading">
+        <div class="table-section-header">
+          <h2 id="log-heading" class="card-heading">Today's Check in and out Log</h2>
+          <div class="table-filters">
+            <label for="role-filter" class="visually-hidden">Filter by role</label>
+            <select id="role-filter" class="select-native">
+              <option value="all">All Role</option>
+              <option value="member">Member</option>
+              <option value="nonmember">NonMember</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table class="data-table" id="checkin-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Time-in</th>
+                <th scope="col">Time-out</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-role="nonmember"><td>21</td><td>Jasmine</td><td>Mosura</td><td>12:42 PM</td><td>8:05 AM</td><td>NonMember</td></tr>
+              <tr data-role="member"><td>20</td><td>Francis</td><td>Madriaga</td><td>11:18 AM</td><td>10:20 AM</td><td>Member</td></tr>
+              <tr data-role="nonmember"><td>19</td><td>Eugene</td><td>Balando</td><td>11:10 AM</td><td>12:00 PM</td><td>NonMember</td></tr>
+              <tr data-role="member"><td>18</td><td>Christoph</td><td>Estenilo</td><td>9:30 AM</td><td>2:35 PM</td><td>Member</td></tr>
+              <tr data-role="nonmember"><td>17</td><td>Avril</td><td>Felix</td><td>9:27 AM</td><td>4:15 PM</td><td>NonMember</td></tr>
+              <tr data-role="member"><td>16</td><td>RJ</td><td>Nalda</td><td>8:12 AM</td><td>7:00 PM</td><td>Member</td></tr>
+            </tbody>
+          </table>
+          <p class="data-table__empty" id="checkin-empty" hidden>No check-ins match this filter.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <aside class="app-aside" aria-label="Profile summary">
+    <div class="profile-card">
+      <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=150&q=80" alt="" />
+      <div>
+        <p class="profile-card__name">Navarro, Irene Celeste</p>
+        <p class="profile-card__age">17 years old</p>
+      </div>
+    </div>
+
+    <dl class="profile-stats">
+      <div>
+        <dt>Height</dt>
+        <dd>6'1</dd>
+      </div>
+      <div>
+        <dt>Weight</dt>
+        <dd>65 kg</dd>
+      </div>
+      <div>
+        <dt>Gender</dt>
+        <dd>Female</dd>
+      </div>
+    </dl>
+
+    <div class="announcements">
+      <h2 class="card-heading">Today's Announcements</h2>
+      <p class="announcements__box">New Zumba schedule starts next week reserve your slot early!</p>
+    </div>
+
+    <!-- Attended calendar (same as member dashboard, driven by trainerdashboard.js) -->
+    <div class="aside-heading">
+      <span class="aside-heading__title">Attended Classes</span>
+      <div class="calendar-controls calendar-controls--inline">
+        <label for="dash-month-select" class="visually-hidden">Select month</label>
+        <select id="dash-month-select" class="dash-month-select"></select>
+        <span id="dash-calendar-year" class="dash-calendar-year"></span>
+      </div>
+    </div>
+
+    <div class="big-calendar" id="dash-big-calendar" role="table" aria-label="Calendar">
+      <span class="big-calendar__head">Sun</span>
+      <span class="big-calendar__head">Mon</span>
+      <span class="big-calendar__head">Tue</span>
+      <span class="big-calendar__head">Wed</span>
+      <span class="big-calendar__head">Thurs</span>
+      <span class="big-calendar__head">Fri</span>
+      <span class="big-calendar__head">Sat</span>
+    </div>
+
+    <h2 class="assigned-heading">Assigned classes:</h2>
+    <ul class="assigned-tags">
+      <li class="tag tag--taekwondo">Taekwondo</li>
+      <li class="tag tag--yoga">Yoga</li>
+      <li class="tag tag--zumba">Zumba</li>
+    </ul>
+  </aside>
+
+</div>
+
+<script src="trainerdashboard.js"></script>
+</body>
+</html>

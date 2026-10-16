@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up · GTG Fitness</title>
+<meta name="description" content="Create your GTG Fitness account to access the system." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="fixed-page signup-page">
+
+<div class="page">
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__logo">GTG FITNESS</a>
+  </header>
+
+  <div class="auth-layout">
+
+    <main class="auth-panel">
+      <div class="auth-form-wrap">
+
+        <h1 class="auth-title">SIGN UP TO <span>GTG FITNESS</span></h1>
+        <p class="auth-subtitle">Access the system by logging in here.</p>
+
+        <form class="auth-form" id="signupForm" novalidate>
+
+          <div class="name-row">
+            <div class="field">
+              <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"></path></svg>
+              <label for="first-name" class="visually-hidden">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="First Name" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"></path></svg>
+              <label for="last-name" class="visually-hidden">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Last Name" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m2 6 10 7 10-7"></path>
+            </svg>
+            <label for="email" class="visually-hidden">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required />
+          </div>
+
+          <div class="field field--toggle">
+            <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            <label for="password" class="visually-hidden">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" required />
+            <button type="button" class="field__toggle-btn" aria-label="Show password" data-toggle-password="password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="field field--toggle">
+            <svg class="field__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="10" rx="2"></rect>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+            </svg>
+            <label for="confirm-password" class="visually-hidden">Confirm password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" autocomplete="new-password" required />
+            <button type="button" class="field__toggle-btn" aria-label="Show password" data-toggle-password="confirm-password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+
+          <div class="checkbox-row">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I accept the <a href="#terms">terms</a> and <a href="#privacy">privacy policy</a></label>
+          </div>
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <button type="submit" class="btn btn-solid btn-block">Create Account</button>
+
+        </form>
+
+        <p class="form-footnote">Have an account? <a href="login.html">Log in</a></p>
+
+      </div>
+    </main>
+
+    <aside class="auth-visual" aria-label="GTG Fitness gym">
+      <img
+        src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1400&q=80"
+        alt="A woman in workout gear carrying a gym bag inside a modern fitness studio" />
+
+      <ul class="visual-contact">
+        <li>
+          <a href="https://www.facebook.com/p/GTG-Fitness-61572973704677/" class="social-link" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+          </a>
+          GTG FITNESS
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2Z"/></svg>
+          09175462414
+        </li>
+      </ul>
+
+      <span class="visual-eye" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      </span>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = document.getElementById(btn.getAttribute('data-toggle-password'));
+      var showing = input.type === 'text';
+      input.type = showing ? 'password' : 'text';
+      btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+    });
+  });
+
+  document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var err = document.getElementById('formError');
+    document.querySelectorAll('.field').forEach(function (f) { f.classList.remove('has-error'); });
+    err.classList.remove('is-visible');
+
+    var msg = '';
+    var bad = [];
+    var first = document.getElementById('first-name');
+    var last  = document.getElementById('last-name');
+    var email = document.getElementById('email');
+    var pw    = document.getElementById('password');
+    var cpw   = document.getElementById('confirm-password');
+
+    if (!first.value.trim())      { msg = 'Please enter your first name.'; bad.push(first); }
+    else if (!last.value.trim())  { msg = 'Please enter your last name.'; bad.push(last); }
+    else if (!email.value.trim()) { msg = 'Please enter your email first.'; bad.push(email); }
+    else if (!email.checkValidity()) { msg = 'That email doesn\u2019t look right. Please check it.'; bad.push(email); }
+    else if (!pw.value)           { msg = 'Please create a password.'; bad.push(pw); }
+    else if (pw.value.length < 6) { msg = 'Password must be at least 6 characters.'; bad.push(pw); }
+    else if (!cpw.value)          { msg = 'Please confirm your password.'; bad.push(cpw); }
+    else if (pw.value !== cpw.value) { msg = 'Passwords do not match.'; bad.push(pw, cpw); }
+    else if (!document.getElementById('terms').checked) { msg = 'Please accept the terms and privacy policy.'; }
+
+    if (msg) {
+      bad.forEach(function (el) { el.closest('.field').classList.add('has-error'); });
+      err.textContent = msg;
+      err.classList.add('is-visible');
+      if (bad[0]) bad[0].focus();
+      return;
+    }
+    window.location.href = 'login.html';
+  });
+</script>
+
+</body>
+</html>

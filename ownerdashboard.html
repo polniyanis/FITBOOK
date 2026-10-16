@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Owner Dashboard · GTG Fitness</title>
+<meta name="description" content="GTG Fitness owner dashboard — revenue, attendance, payments, and activity overview." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="app.css" />
+<link rel="stylesheet" href="owner-dashboard.css" />
+</head>
+<body>
+
+<div class="app-shell app-shell--with-aside">
+
+  <header class="app-topbar">
+    <a href="ownerdashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <details class="settings-menu">
+      <summary class="app-topbar__settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+        </svg>
+      </summary>
+      <div class="settings-panel">
+        <div class="settings-panel__profile">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="" />
+          <div>
+            <p class="settings-panel__profile-name">Pichay, Dahlla</p>
+            <p class="settings-panel__profile-sub">Owner</p>
+          </div>
+        </div>
+        <a href="edit-profile-owner.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit Profile
+        </a>
+        <div class="settings-panel__divider"></div>
+        <a href="index.html" class="settings-panel__logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="M16 17l5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </details>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li class="is-active"><a href="ownerdashboard.html" aria-current="page">Dashboard</a></li>
+      <li><a href="#">Calendar</a></li>
+      <li><a href="#">Members Management</a></li>
+      <li><a href="#">Class Management</a></li>
+      <li><a href="#">Trainer Management</a></li>
+      <li><a href="#">Employee Management</a></li>
+      <li><a href="#">Payments &amp; Revenue</a></li>
+      <li><a href="#">Feedback Summary</a></li>
+      <li><a href="#">Performance Analytics</a></li>
+      <li><a href="#">Equipment Management</a></li>
+    </ul>
+  </nav>
+
+  <main class="app-main">
+
+    <section class="hero-banner">
+      <h1>Good morning, Dahlla!</h1>
+      <p>Here's how GTG Fitness is doing today.</p>
+    </section>
+
+    <section class="kpi-row" aria-label="Key numbers">
+      <article class="kpi-card">
+        <p class="kpi-card__label">Attendees Today</p>
+        <p class="kpi-card__value">21</p>
+        <p class="kpi-card__trend kpi-card__trend--neutral">25–40 expected per day</p>
+      </article>
+      <article class="kpi-card">
+        <p class="kpi-card__label">Revenue Today</p>
+        <p class="kpi-card__value">₱1,300.00</p>
+        <p class="kpi-card__trend kpi-card__trend--up">▲ 8% vs. last Thursday</p>
+      </article>
+      <article class="kpi-card">
+        <p class="kpi-card__label">Revenue This Month</p>
+        <p class="kpi-card__value">₱47,500</p>
+        <p class="kpi-card__trend kpi-card__trend--up">▲ 12% vs. last month</p>
+      </article>
+      <article class="kpi-card">
+        <p class="kpi-card__label">Pending GCash Payments</p>
+        <p class="kpi-card__value" id="pending-count">3</p>
+        <p class="kpi-card__trend kpi-card__trend--down">Needs verification</p>
+      </article>
+    </section>
+
+    <div class="owner-grid">
+
+      <section class="card" aria-labelledby="attendance-heading">
+        <h2 id="attendance-heading" class="owner-card-title">Attendance <small>Last 7 days</small></h2>
+        <div class="bar-chart" role="img" aria-label="Attendance over the last 7 days: Fri 38, Sat 40, Sun 25, Mon 32, Tue 28, Wed 35, Thu 21 so far today">
+          <div class="bar-chart__col"><span class="bar-chart__value">38</span><div class="bar-chart__bar" style="height: 95%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">40</span><div class="bar-chart__bar" style="height: 100%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">25</span><div class="bar-chart__bar" style="height: 62%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">32</span><div class="bar-chart__bar" style="height: 80%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">28</span><div class="bar-chart__bar" style="height: 70%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">35</span><div class="bar-chart__bar" style="height: 87%"></div></div>
+          <div class="bar-chart__col"><span class="bar-chart__value">21</span><div class="bar-chart__bar bar-chart__bar--today" style="height: 52%"></div></div>
+        </div>
+        <div class="bar-chart__labels" aria-hidden="true">
+          <span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Today</span>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="revenue-heading">
+        <h2 id="revenue-heading" class="owner-card-title">Revenue by Class <small>This month</small></h2>
+        <ul class="revenue-list">
+          <li>
+            <div class="revenue-list__top"><span>Gym use</span><span>₱14,500</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--gym" style="width: 100%"></div></div>
+          </li>
+          <li>
+            <div class="revenue-list__top"><span>Boxing</span><span>₱8,200</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--boxing" style="width: 57%"></div></div>
+          </li>
+          <li>
+            <div class="revenue-list__top"><span>Zumba</span><span>₱7,300</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--zumba" style="width: 50%"></div></div>
+          </li>
+          <li>
+            <div class="revenue-list__top"><span>Muay Thai</span><span>₱6,400</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--muaythai" style="width: 44%"></div></div>
+          </li>
+          <li>
+            <div class="revenue-list__top"><span>Yoga</span><span>₱6,000</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--yoga" style="width: 41%"></div></div>
+          </li>
+          <li>
+            <div class="revenue-list__top"><span>Taekwondo</span><span>₱5,100</span></div>
+            <div class="revenue-list__track"><div class="revenue-list__fill fill--taekwondo" style="width: 35%"></div></div>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="table-section-header">
+      <h2>Recent Payments</h2>
+      <div class="table-filters">
+        <label for="status-filter" class="visually-hidden">Filter by status</label>
+        <select id="status-filter" class="select-native">
+          <option value="all">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="verified">Verified</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="table-scroll" style="margin-bottom: 1.5rem;">
+      <table class="data-table" id="payments-table">
+        <thead>
+          <tr>
+            <th scope="col">Member</th>
+            <th scope="col">Class</th>
+            <th scope="col">Amount</th>
+            <th scope="col">GCash Ref. No.</th>
+            <th scope="col">Status</th>
+            <th scope="col"><span class="visually-hidden">Action</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-status="pending">
+            <td>Jasmine Mosura</td><td>Zumba · 1 session</td><td class="amount-cell">₱200</td><td>4821 7730 1156</td>
+            <td><span class="status-badge status-badge--pending">Pending</span></td>
+            <td><button type="button" class="table-action">Verify</button></td>
+          </tr>
+          <tr data-status="pending">
+            <td>Eugene Balando</td><td>Boxing · 2 sessions</td><td class="amount-cell">₱650</td><td>3390 1284 9047</td>
+            <td><span class="status-badge status-badge--pending">Pending</span></td>
+            <td><button type="button" class="table-action">Verify</button></td>
+          </tr>
+          <tr data-status="pending">
+            <td>Avril Felix</td><td>Muay Thai · 1 session</td><td class="amount-cell">₱1,500</td><td>7712 6603 2285</td>
+            <td><span class="status-badge status-badge--pending">Pending</span></td>
+            <td><button type="button" class="table-action">Verify</button></td>
+          </tr>
+          <tr data-status="verified">
+            <td>Francis Madriaga</td><td>Yoga · 3 sessions</td><td class="amount-cell">₱600</td><td>5509 3318 7740</td>
+            <td><span class="status-badge status-badge--verified">Verified</span></td>
+            <td></td>
+          </tr>
+          <tr data-status="verified">
+            <td>Christoph Estenilo</td><td>Taekwondo · 1 session</td><td class="amount-cell">₱300</td><td>1043 8856 2291</td>
+            <td><span class="status-badge status-badge--verified">Verified</span></td>
+            <td></td>
+          </tr>
+          <tr data-status="verified">
+            <td>RJ Nalda</td><td>Gym use · 1 session</td><td class="amount-cell">₱100</td><td>6627 0915 4403</td>
+            <td><span class="status-badge status-badge--verified">Verified</span></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table__empty" id="payments-empty" hidden>No payments match this filter.</p>
+    </div>
+
+    <section class="card" aria-labelledby="audit-heading">
+      <h2 id="audit-heading" class="owner-card-title">Recent Activity <small>Audit log</small></h2>
+      <ul class="audit-list">
+        <li>
+          <span class="audit-list__dot" aria-hidden="true"></span>
+          <div>
+            <p class="audit-list__text"><strong>Joanne Pichay</strong> updated the Zumba class schedule</p>
+            <p class="audit-list__meta">Today · 9:42 AM</p>
+          </div>
+        </li>
+        <li>
+          <span class="audit-list__dot" aria-hidden="true"></span>
+          <div>
+            <p class="audit-list__text"><strong>Jerome Pichay</strong> verified a GCash payment (₱100)</p>
+            <p class="audit-list__meta">Today · 9:15 AM</p>
+          </div>
+        </li>
+        <li>
+          <span class="audit-list__dot" aria-hidden="true"></span>
+          <div>
+            <p class="audit-list__text"><strong>Coach Irene</strong> updated her availability</p>
+            <p class="audit-list__meta">Yesterday · 5:30 PM</p>
+          </div>
+        </li>
+        <li>
+          <span class="audit-list__dot" aria-hidden="true"></span>
+          <div>
+            <p class="audit-list__text"><strong>Jerome Pichay</strong> added a new member record</p>
+            <p class="audit-list__meta">Yesterday · 11:08 AM</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="app-aside" aria-label="Owner summary">
+    <div class="profile-card">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="" />
+      <div>
+        <p class="profile-card__name">Pichay, Dahlla Caliston</p>
+        <p class="profile-card__age">Owner · GTG Fitness</p>
+      </div>
+    </div>
+
+    <div class="announcements">
+      <h2 class="card-heading">Today's Announcements</h2>
+      <p class="announcements__box">New Zumba schedule starts next week reserve your slot early!</p>
+    </div>
+
+    <h2 class="aside-section-title">Staff on duty <small style="font-weight:500;color:var(--text-muted)">9 AM – 6 PM</small></h2>
+    <ul class="staff-list">
+      <li>
+        <span>Joanne Christy Pichay<small>Front desk</small></span>
+        <span class="staff-list__status" title="On duty"></span>
+      </li>
+      <li>
+        <span>Jerome Chester Pichay<small>Front desk</small></span>
+        <span class="staff-list__status" title="On duty"></span>
+      </li>
+      <li>
+        <span>Coach Irene<small>Lead coach</small></span>
+        <span class="staff-list__status" title="On duty"></span>
+      </li>
+      <li>
+        <span>Muay Thai trainer<small>On-call</small></span>
+        <span class="staff-list__status staff-list__status--off" title="Off duty"></span>
+      </li>
+    </ul>
+  </aside>
+
+</div>
+
+<script>
+
+  var statusFilter = document.getElementById('status-filter');
+  var payRows = document.querySelectorAll('#payments-table tbody tr');
+  var payEmpty = document.getElementById('payments-empty');
+  var pendingCount = document.getElementById('pending-count');
+
+  function applyPaymentFilter() {
+    var status = statusFilter.value;
+    var visible = 0;
+    payRows.forEach(function (row) {
+      var matches = status === 'all' || row.getAttribute('data-status') === status;
+      row.classList.toggle('is-hidden', !matches);
+      if (matches) visible++;
+    });
+    payEmpty.hidden = visible !== 0;
+  }
+
+  function updatePendingCount() {
+    var n = document.querySelectorAll('#payments-table tbody tr[data-status="pending"]').length;
+    pendingCount.textContent = n;
+  }
+
+  statusFilter.addEventListener('change', applyPaymentFilter);
+
+  document.querySelectorAll('.table-action').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var row = btn.closest('tr');
+      row.setAttribute('data-status', 'verified');
+      var badge = row.querySelector('.status-badge');
+      badge.className = 'status-badge status-badge--verified';
+      badge.textContent = 'Verified';
+      btn.remove();
+      updatePendingCount();
+      applyPaymentFilter();
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.settings-menu[open]').forEach(function (d) {
+      if (!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Schedule · GTG Fitness Trainer</title>
+<meta name="description" content="Your assigned classes at GTG Fitness." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="trainercalendar.css" />
+</head>
+<body>
+
+<div class="app-shell app-shell--with-aside">
+
+  <header class="app-topbar">
+    <a href="trainerdashboard.html" class="app-topbar__logo">GTG FITNESS</a>
+    <details class="settings-menu">
+      <summary class="app-topbar__settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.32.44.55.8.66.34.11.65.36.8.66"></path>
+        </svg>
+      </summary>
+      <div class="settings-panel">
+        <div class="settings-panel__profile">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=100&q=80" alt="" />
+          <div>
+            <p class="settings-panel__profile-name">Navarro, Irene Celeste</p>
+            <p class="settings-panel__profile-sub">Trainer</p>
+          </div>
+        </div>
+        <a href="edit-profile-trainer.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+          </svg>
+          Edit Profile
+        </a>
+        <div class="settings-panel__divider"></div>
+        <a href="index.html" class="settings-panel__logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <path d="M16 17l5-5-5-5"></path>
+            <path d="M21 12H9"></path>
+          </svg>
+          Log Out
+        </a>
+      </div>
+    </details>
+  </header>
+
+  <nav class="app-sidebar" aria-label="Main navigation">
+    <ul class="app-nav">
+      <li><a href="trainerdashboard.html">Dashboard</a></li>
+      <li class="is-active"><a href="trainercalendar.html" aria-current="page">Calendar</a></li>
+      <li><a href="#">Member Progress</a></li>
+      <li><a href="#">Trainer Availability</a></li>
+    </ul>
+    <div class="app-sidebar__logout">
+      <a href="index.html" aria-label="Log out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <path d="M16 17l5-5-5-5"></path>
+          <path d="M21 12H9"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <a href="trainercalendar.html" class="back-link">&lt; Back</a>
+
+    <section class="card big-calendar-card" aria-label="Calendar">
+      <div class="calendar-header">
+        <div class="calendar-controls">
+          <label for="month-select" class="visually-hidden">Select month</label>
+          <select id="month-select" class="select-native"></select>
+          <span id="calendar-year" class="calendar-year"></span>
+        </div>
+      </div>
+
+      <div class="big-calendar" id="big-calendar" role="table" aria-label="Calendar">
+        <span class="big-calendar__head">Sun</span>
+        <span class="big-calendar__head">Mon</span>
+        <span class="big-calendar__head">Tue</span>
+        <span class="big-calendar__head">Wed</span>
+        <span class="big-calendar__head">Thurs</span>
+        <span class="big-calendar__head">Fri</span>
+        <span class="big-calendar__head">Sat</span>
+      </div>
+
+      <div class="class-legend" aria-label="Class colors">
+        <span class="class-legend__label">Assigned classes:</span>
+        <span class="tag tag--taekwondo">Taekwondo</span>
+        <span class="tag tag--yoga">Yoga</span>
+        <span class="tag tag--zumba">Zumba</span>
+      </div>
+    </section>
+  </main>
+
+  <aside class="app-aside app-aside--schedule" aria-label="Schedule for selected day">
+    <div class="schedule-card__body">
+      <h2 class="schedule-card__title" id="schedule-title">Schedule</h2>
+      <p class="schedule-count" id="schedule-count"></p>
+      <div class="session-list" id="session-list">
+        <p class="schedule-empty">Select a date to see your classes.</p>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<script src="trainermyschedule.js"></script>
+</body>
+</html>
