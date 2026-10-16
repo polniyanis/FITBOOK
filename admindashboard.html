@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="app.css" />
+<link rel="stylesheet" href="staff-dashboard.css" />
 </head>
 <body>
 
@@ -203,7 +204,7 @@
 </div>
 
 <script>
-  
+
   var roleFilter = document.getElementById('role-filter');
   var classFilter = document.getElementById('class-filter');
   var rows = document.querySelectorAll('#checkin-table tbody tr');
@@ -228,7 +229,6 @@
   roleFilter.addEventListener('change', applyLogFilters);
   classFilter.addEventListener('change', applyLogFilters);
 
-  
   var announcementBox = document.getElementById('announcement-box');
 
   function createAnnouncementItem(text) {
