@@ -1,11 +1,11 @@
-.hero-banner {
+.page-greeting {
   background: none;
   padding: 0;
   color: var(--text-dark);
   margin-bottom: 1.5rem;
 }
 
-.hero-banner h1 {
+.page-greeting h1 {
   font-family: var(--font-display);
   font-weight: 400;
   text-transform: uppercase;
@@ -14,7 +14,7 @@
   margin: 0 0 0.3rem;
 }
 
-.hero-banner p {
+.page-greeting p {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
