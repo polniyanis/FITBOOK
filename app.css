@@ -1995,7 +1995,7 @@ dialog.payment-modal::backdrop {
   box-shadow: none;
 }
 
-/* smaller My Schedule button so the calendar lines up with the trainer pages */
+
 .app-shell:has(.big-calendar-card) .btn-navy {
   padding: 0.35rem 1rem;
   font-size: 0.85rem;
